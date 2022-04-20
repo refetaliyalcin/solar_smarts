@@ -1,0 +1,152 @@
+
+******************   SMARTS, version 2.9.5   *******************
+
+ Simple Model of the Atmospheric Radiative Transfer of Sunshine
+     Chris A. Gueymard, Solar Consulting Services
+                    December 2005
+
+    This model is documented in FSEC Report PF-270-95
+ and in a Solar Energy paper, vol. 71, No.5, 325-346 (2001)
+
+ NOTE: These references describe v. 2.8 or earlier!!!
+ See the User's Manual for details on the considerable 
+ changes that followed...
+
+****************************************************************
+
+   Reference for this run: Example                                                         
+
+----------------------------------------------------------------
+
+* ATMOSPHERE : USSA        AEROSOL TYPE: S&F_RURAL                                                       
+
+* INPUTS:
+     Pressure (mb) = 1013.250   Ground Altitude (km) =   0.0000
+     Height above ground (km) =   0.0000
+     Relative Humidity (%) = 46.040   Precipitable Water (cm) =  1.4160
+     Ozone (atm-cm) = 0.3438 or 343.8 Dobson Units
+   AEROSOLS:  Optical Depth at 500 nm = 0.0850      Optical depth at 550 nm = 0.0774
+       Angstrom's Beta = 0.0337       Schuepp's B = 0.0369
+     Meteorological Range (km) =  122.2   Visibility (km) =   93.6
+     Alpha1 = 0.9637  Alpha2 = 1.4301   Mean Angstrom's Alpha = 1.1969
+     Season = SPRING/SUMMER           
+
+* TEMPERATURES:
+     Instantaneous at site's altitude = 288.1 K
+     Daily average (reference) at site's altitude = 288.1 K
+     Stratospheric Ozone and NO2 (effective) = 225.3 K
+
+** WARNING #13 *********
+\\ Ground reflectance data for DRY_GRASS               
+\\ extend only from 0.3805 to 4.0001 µm,
+\\ whereas the wavelength limits for this run are 0.2800 and 4.0000 µm.
+\\ Consequently, reflectance is fixed at 0.142 below 0.3805 µm and at 0.201 above 4.0001 µm.
+
+
+
+The following spectral variables will be output to file: smarts295.ext.txt       
+
+ * Direct_normal_irradiance
+ * Difuse_horizn_irradiance
+ * Dir_norml_PAR_photn_flux
+
+
+      Spectral ZONAL albedo data: DRY_GRASS               
+      with a reflection process: NON_LAMBERTIAN          
+
+
+
+====================================================================================================
+====================================================================================================
+
+* SOLAR POSITION (deg.):
+    Zenith Angle (apparent) = 62.956  Azimuth (from North) =  179.08
+
+      RELATIVE OPTICAL MASSES:
+  - Rayleigh =  2.192
+  - Water Vapor =  2.198
+  - Ozone =  2.182
+  - NO2 =  2.186
+  - Aerosols =  2.197
+
+  Results below are for this specific day:
+ Year = 2022   Month =  1  Day =  1   Hour (LST) = 12.000   Day of Year =   1
+   In Universal Time:
+   Day (UT) =  1   Hour (UT) = 12.000
+   Julian Day =  2459581.000  Declination = -22.979 deg.  Radius vector = 0.98330   Equation of Time (min) =  -3.539
+   Local Apparent Time (or Solar Time):  11.941
+
+
+
+ CO2 Mixing Ratio (ppmv):  370.0
+
+
+
+ Total column abundances (atm-cm) for all gases except H2O, and for normal/standard conditions:
+
+    BrO       CH2O        CH4      ClNO3         CO        CO2       HNO2       HNO3        NH3
+
+0.2500E-05 0.3000E-03 0.1326E+01 0.1200E-03 0.8859E-01 0.2970E+03 0.1000E-03 0.3637E-03 0.1751E-03
+
+
+     NO        NO2        NO3         N2        N2O         O2         O3         O4        SO2
+
+0.3145E-03 0.2044E-03 0.5000E-04 0.3827E+06 0.2473E+00 0.1678E+06 0.3438E+00 0.1678E+06 0.1100E-03
+
+
+
+
+*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+
+** SPECTRUM:
+   Total (0-100 µm) Extraterrestrial Irradiance used here = 1413.82 W/m2
+  (i.e., 1.0343 times the selected solar constant, 1367.00 W/m2, due to the actual Sun-Earth distance.)
+   Source for selected solar spectrum: SMARTS_Gueymard                                                 
+
+
+Wavelength Range =  280.0 to 4000.0 nm;  Number of Wavelengths =  2002
+
+*** BROADBAND IRRADIANCES (W/m2):
+
+* DIRECT BEAM AT NORMAL INCIDENCE:
+  Extraterrestrial = 1394.10   Terrestrial =  821.87   Atmospheric Transmittance = 0.5895
+
+* FOR THE HORIZONTAL PLANE:
+  Direct Beam =  373.69   Diffuse =  91.83   Global =  465.52   Clearness index, KT = 0.3293
+  Diffuse irradiance origination details:
+   Sky diffuse =  77.56   Back-scattered diffuse =  14.27
+
+
+
+
+*** UV IRRADIANCES (W/m2):
+
+ TOTAL UV-A IRRADIANCE (315-400 nm) =  24.35416
+ TOTAL UV-B IRRADIANCE (280-315 nm) =  0.27066
+
+ TOTAL UV-A IRRADIANCE (320-400 nm) =  23.92873
+ TOTAL UV-B IRRADIANCE (280-320 nm) =  0.68625
+
+
+*** ACTION-WEIGHTED DOSE RATES (W/m2) USING SELECTED ACTION CURVES
+
+ ERYTHEMAL C.I.E. (McKinley & Diffey, 1987) = 0.3811E-01
+ ERYTHEMAL from Green et al. (1974) = 0.1656E-01
+ ERYTHEMAL from Green et al. (1975) = 0.1884E-01
+ ERYTHEMAL from Diffey (1982) modified by Bjorn (1989) = 0.3372E-01
+ DNA DAMAGE from Setlow (1974) = 0.3153E-03
+ PHOTOSYNTHESIS INHIBITION from Caldwell et al. (1986) = 0.4593E+00
+ ACGIH SAFETY SPECTRUM from Wester (1981) = 0.3468E-02
+ BIOLOGICAL ACTION from Caldwell (1971) and Green (1974) = 0.6142E-02
+ POLYCHROMATIC ACTION FOR HIGHER PLANTS from Caldwell et al. (1986) = 0.5315E-01
+ SYSTEMIC IMMUNOSUPPRESSION from deFabo et al. (1990)    = 0.1059E+00
+ DNA TO PROTEIN CROSSLINKS from Peak & Peak (1986) = 0.6824E-02
+ SKIN CARCINOGENESIS from deGruijl & VanderLeun (1994) = 0.8082E-01 (humans); 0.2386E-01 (mice)
+
+
+*** DOSE RATE IN MED/h from an ideal Robertson-Berger instrument = 0.6534E+00
+
+
+*** UV Index =   1.524
+
+

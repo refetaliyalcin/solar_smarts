@@ -1,0 +1,26 @@
+'Example'  !Card 1 Comment
+1  !Card 2 ISPR
+1013.25 0. 0. !Card 2a Pressure & altitude
+1 !Card 3 IATMOS
+'USSA' !Card 3a Atmosphere
+1 !Card 4 IH2O
+1 !Card 5 IO3, AbO3
+1 !Card 6 IGAS
+370 !Card 7 qCO2
+1 !Card 7a qCO2
+'S&F_RURAL' !Card 8 Aeros
+0 !Card 9
+0.085 !Card 9a qCO2
+26 !Card 10 IALBDX
+0 !Card 10b ITILT
+280 4000 1.0 1367.0 !Card 11 Input wavelengths; solar constant modifier; solar constant
+2 !Card 12 IPRT
+280 4000 1.0 !Card 12a Instrument characteristics
+3
+2 3 36
+0 !Card 13 ICIRC
+0 !Card 14 ISCAN
+0 !Card 15 ILLUM
+1 !Card 16 IUV
+3 !Card 17 IMASS
+2022 1 1 12 40 0.0 0
