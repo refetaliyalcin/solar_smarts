@@ -15,8 +15,8 @@ greenhouse_area = 100; % from top view in m^2
 hour_light = 20; %20h / 24h lighting will be used according to https://doi.org/10.1626/JCS.58.689
 number_of_shelves = 8; %subject to change to find an optimum
 desired_PAR_per_shelf = 120; % in mmol*m^-2*s^-1 we can consider to adjust 
-ita_cd = 0.5; %collection distribution efficiency
-ita_cd_thermal = 0.7; % i think it should be larger than ita_cd as absorption in fiber contributes to heating
+ita_cd_light = 0.5; %collection distribution efficiency
+ita_cd_thermal_internal = 0.3; % i think it should be smaller than ita_cd_light as absorption in fiber cables also contributes to heating beside transmitted radiation
 t_eff=1.13; %fluorescent effect, effective transmittance of the fluorescent coating
 PAR_W_coeff = 3.3; % PAR to Watt conversion of growth LEDs https://www.assets.signify.com/is/content/Signify/Assets/philips-lighting/global/20211217-production-module.pdf
 doy_to_on_IR_filter=-1; %day of the year to enable IR filter. make -1 to enable always, 90 is approximately 1 April subject to change wrt climate
@@ -63,9 +63,9 @@ for doy=1:365
 end
 
 % PAR Calculation Starts
-PAR_from_cd_IR_filter_flo = PAR_IR_filter * ita_cd * solar_collector_area * t_eff; % cases 1 and 5
-PAR_from_cd_flo = PAR * ita_cd * solar_collector_area * t_eff; % case 2
-PAR_from_cd_IR_filter = PAR_IR_filter * ita_cd * solar_collector_area; % case 3
+PAR_from_cd_IR_filter_flo = PAR_IR_filter * ita_cd_light * solar_collector_area * t_eff; % cases 1 and 5
+PAR_from_cd_flo = PAR * ita_cd_light * solar_collector_area * t_eff; % case 2
+PAR_from_cd_IR_filter = PAR_IR_filter * ita_cd_light * solar_collector_area; % case 3
 
 total_PAR_required = desired_PAR_per_shelf * number_of_shelves * greenhouse_area; % cases 1, 2, 3, 4
 
@@ -105,8 +105,8 @@ yearly_lettuce_kg_case_5 = sum(growth_day_hour_solar_only,'All')/1000 % Case 5
 %Growth calculation ends%
 
 % Heat Load Calculations Starts
-Q_solar = direct_solar * ita_cd_thermal * solar_collector_area; %in Watt Case 2
-Q_solar_IR_filter = direct_solar_IR_filter * ita_cd_thermal * solar_collector_area; %in Watt Cases 1, 3 and 5
+Q_solar = direct_solar * (1-ita_cd_thermal_internal) * solar_collector_area; %in Watt Case 2
+Q_solar_IR_filter = direct_solar_IR_filter * (1-ita_cd_thermal_internal) * solar_collector_area; %in Watt Cases 1, 3 and 5
 Q_solar_case_1 = Q_solar_IR_filter;
 Q_solar_case_2 = Q_solar;
 Q_solar_case_3 = Q_solar_IR_filter;
